@@ -68,9 +68,6 @@ function comparison() {
 function reset() {
 	console.log(":p");
 
-	const divElement = document.createElement("div");
-	const pElement = document.createElement("p");
-
 	const divResultField = document.createElement("div");
 	divResultField.appendChild(document.createTextNode("Result: "));
 	const pResultField = document.createElement("p");
@@ -95,7 +92,6 @@ function reset() {
 }
 
 function init() {
-	number = Math.trunc(Math.random()*(100+1));
 
 	resultsDiv = document.querySelector(".center_div_body_results");
 
@@ -109,11 +105,13 @@ function init() {
 
 	triesField = document.querySelector(".triesField");
 
+	// Reset Variables
+
+	number = Math.trunc(Math.random()*(100+1));
+
 	tries = 0;
 
-	// Event Listeners
-
-	guessSubmit.addEventListener("click", comparison);
+	guessField.value = "";
 }
 
 // Variable Initializations
@@ -137,3 +135,21 @@ let triesField;
 // Init first game
 
 init();
+
+// Event Listener Initializations
+
+guessSubmit.addEventListener("click", comparison);
+guessField.addEventListener("keyup", (e) => {
+
+	if (e.repeat) {
+		return
+	}
+
+	else if (e.code === 'Enter') {
+		console.log(e.code);
+		comparison();
+	} else if (e.code === 'NumpadEnter') {
+		console.log(e.code);
+		comparison();
+	}
+}, true)

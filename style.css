@@ -112,6 +112,75 @@ button:hover , input[type=submit]:hover {
 	width: 200px;
 }
 
+/* Mobile Design */
+
+@media only screen and (max-width: 600px) {
+  html {
+    background-color: lightblue;
+  }
+
+	body {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.center_div {
+		width: 400px;
+		background-color: var(--Venice);
+		border-radius: 20px;
+		box-shadow: var(--Kelp) -10px 10px 15px;
+	}
+	
+	.center_div_body {
+		background-color: var(--Linen);
+		border-top: 2px whitesmoke solid;
+		border-radius: 0 20px 0 0;
+		padding-top: .25rem;
+		padding-bottom: 1rem;
+		padding-inline: 1rem;
+	}
+	
+	.center_div_body_results {
+		background-color: var(--Linen);
+		border-top: 2px whitesmoke solid;
+		border-radius: 0 0 0 20px;
+		padding-block: 1rem;
+		padding-inline: 1rem;
+	}
+	
+	.center_div_body_results > div {
+		font-weight: bold;
+		padding-block: .25rem;
+	}
+	
+	.center_div_body_results p {
+		margin: 0;
+		padding: 0;
+		display: inline;
+		font-weight: normal;
+	}
+	
+	.center_div_body_results_finalMessage {
+		margin:0;
+		padding-block: 1rem;
+		gap: .5rem;
+		font-size: 4rem;
+		font-weight: bold;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	input[type="text"] {
+		width: 90px;
+	}
+}
+
+/* Animations */
+
 @keyframes intro {
 	from {opacity: 0;}
 	to {opacity: 100;}
