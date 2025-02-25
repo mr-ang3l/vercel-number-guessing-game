@@ -1,9 +1,9 @@
 // Function Initializations
 
 function comparison() {
-	console.log(number);
+/* 	console.log(number); */
 	const guessValue = guessField.value;
-	console.log(guessValue);
+/* 	console.log(guessValue); */
 
 	if (guessValue < 1 || guessValue > 100) {
 		resultField.textContent = `That value is not valid!`;
@@ -63,6 +63,7 @@ function comparison() {
 			}
 		}
 	}
+	guessField.value = "";
 }
 
 function reset() {
@@ -112,6 +113,8 @@ function init() {
 	tries = 0;
 
 	guessField.value = "";
+
+	guessField.focus();
 }
 
 // Variable Initializations
